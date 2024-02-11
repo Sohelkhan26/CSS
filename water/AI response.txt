@@ -1,0 +1,40 @@
+The issue is with the letter-spacing property in the a:hover selector. There is a space between the value and the unit em which is causing the problem. CSS values and their units should not have a space between them.
+
+Here's the corrected code:
+
+With this correction, the hover effect should work as expected.
+
+
+
+The CSS var() function is used to insert the value of a custom property (also known as a "CSS variable").
+
+In your code, --clr is a custom property. When you use var(--clr), it will be replaced with the value of --clr.
+
+In the HTML, you have an anchor tag with an inline style --clr:#1e9bff. This sets the value of --clr to #1e9bff for this specific element.
+
+So, when the CSS is applied to this anchor tag, var(--clr) in the background property will be replaced with #1e9bff. This means the background color of this anchor tag will be #1e9bff.
+
+This is a powerful feature of CSS as it allows you to define values that can be reused throughout the document. You can change the value in one place, and it updates everywhere it's used.
+
+
+transition: 0.5s;: This sets the duration of the transition effect for the anchor tags to 0.5 seconds. The transition effect will be applied when the anchor tags change due to a :hover, :focus, or any other pseudo-class being activated.
+
+
+
+
+box-shadow: 0 0 35px var(--clr);
+
+
+The box-shadow property is used to apply a shadow effect to an element. The values provided define the shadow's offset, blur radius, and color.
+
+In the given code:
+
+The first 0 is the horizontal offset of the shadow. A positive value places the shadow on the right side of the box, a negative value places it on the left. Here, it's set to 0, so the shadow will be directly under the box, not offset to the left or right.
+
+The second 0 is the vertical offset of the shadow. A positive value places the shadow below the box, a negative value places it above. Here, it's set to 0, so the shadow will be directly under the box, not offset above or below.
+
+35px is the blur radius. The larger the number, the more blurred the shadow will be. Here, it's set to 35px, so the shadow will be quite blurred.
+
+var(--clr) is the color of the shadow. The var(--clr) is a CSS variable that will be replaced with the value of --clr defined elsewhere in the CSS.
+
+So, this line of code will apply a shadow directly under the box, quite blurred, with a color defined by the --clr CSS variable.
